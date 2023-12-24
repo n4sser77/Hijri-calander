@@ -16,8 +16,8 @@ function displayIslamicDate() {
 }
 
 async function fetchMosqueImage() {
-    const accessKey = 'YOUR_UNSPLASH_ACCESS_KEY';
-    const endpoint = 'https://api.unsplash.com/photos/random';
+    const accessKey = 'sw9faxn2loydhYCCWSCjvPLPOJ2WLF6aFZ9sHPdWUV4';
+    const endpoint = 'https://api.unsplash.com/photos/mosque';
     const theme = 'mosque';
 
     try {
