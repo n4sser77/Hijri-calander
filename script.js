@@ -1,6 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     displayIslamicDate();
     fetchMosqueImage();
+    createCalendar();
 });
 
 function displayIslamicDate() {
@@ -33,4 +34,43 @@ async function fetchMosqueImage() {
     }
 }
 
+function createCalendar() {
+    const calendarElement = document.getElementById('calendar');
+    const daysInMonth = 30; // Assuming a standard Hijri month
 
+    let tableHtml = `
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    // Placeholder for the current day (January 1, 2024)
+    const currentDay = 1;
+
+    for (let week = 0; week < 5; week++) {
+        tableHtml += '<tr>';
+        for (let day = 1; day <= 7; day++) {
+            const dayNumber = (week * 7) + day;
+            const isCurrentDay = dayNumber === currentDay;
+            tableHtml += `<td class="${isCurrentDay ? 'table-info' : ''}">${dayNumber}</td>`;
+        }
+        tableHtml += '</tr>';
+    }
+
+    tableHtml += `
+            </tbody>
+        </table>
+    `;
+
+    calendarElement.innerHTML += tableHtml;
+}
