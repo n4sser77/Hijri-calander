@@ -15,11 +15,22 @@
             grid-template-columns: repeat(7, 1fr);
             gap: 1px;
             background-color: #f8f9fa; /* Bootstrap's default background color */
+            border: 1px solid #dee2e6; /* Bootstrap's default border color */
+            border-radius: 5px;
+            overflow: hidden;
         }
 
         #calendar td {
-            padding: 10px;
+            padding: 20px;
             text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #ffffff; /* White background for each cell */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #calendar td:hover {
+            background-color: #f0f8ff; /* Lighter blue background on hover */
         }
     </style>
     <title>Islamic Calendar</title>
